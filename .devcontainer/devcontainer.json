@@ -19,7 +19,8 @@
       "extensions": [
         "Shopify.ruby-lsp",
         "KoichiSasada.vscode-rdbg",
-        "rubocop.vscode-rubocop"
+        "rubocop.vscode-rubocop",
+        "eamodio.gitlens"
       ]
     }
   },
