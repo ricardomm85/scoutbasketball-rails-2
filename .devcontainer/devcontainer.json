@@ -7,7 +7,7 @@
   "updateContentCommand": "bundle install",
   "postCreateCommand": "",
   "postAttachCommand": {
-    "server": "rails server"
+    "server": "RUBY_DEBUG_OPEN=true rails server"
   },
   "customizations": {
     "codespaces": {
@@ -18,7 +18,8 @@
     "vscode": {
       "extensions": [
         "Shopify.ruby-lsp",
-        "KoichiSasada.vscode-rdbg"
+        "KoichiSasada.vscode-rdbg",
+        "rubocop.vscode-rubocop"
       ]
     }
   },
