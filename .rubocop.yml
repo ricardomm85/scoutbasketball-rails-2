@@ -1,2 +1,7 @@
-Style/Documentation:
-  Enabled: false
+
+AllCops:
+  Style/Documentation:
+    Enabled: false
+  Style/StringLiterals:
+    Enabled: true
+    EnforcedStyle: single_quotes
