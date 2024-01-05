@@ -1,7 +1,6 @@
 
-AllCops:
-  Style/Documentation:
-    Enabled: false
-  Style/StringLiterals:
-    Enabled: true
-    EnforcedStyle: single_quotes
+Style/Documentation:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
