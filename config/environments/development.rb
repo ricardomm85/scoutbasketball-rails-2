@@ -61,7 +61,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  pf_domain = ENV['GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN']
+  pf_domain = ENV.fetch('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN', nil)
   config.action_dispatch.default_headers = {
     'X-Frame-Options' => "ALLOW-FROM #{pf_domain}"
   }
@@ -76,7 +76,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Allow requests from our preview domain.
-  pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
+  pf_host = "#{ENV.fetch('CODESPACE_NAME', nil)}-3000.#{pf_domain}"
   config.hosts << pf_host
   config.hosts << 'localhost:3000'
 
