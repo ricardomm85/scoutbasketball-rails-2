@@ -24,11 +24,10 @@ jobs:
           MYSQL_PASSWORD: password
     env:
       RAILS_ENV: test
-      DATABASE_URL: "mysql://rails:password@localhost:3306/rails_test"
+      DATABASE_URL: "mysql2://rails:password@localhost:3306/rails_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
