@@ -69,6 +69,8 @@ group :development do
   gem "hotwire-livereload", "~> 1.2"
 
   gem 'schema_to_scaffold'
+
+  gem 'bundler-audit'
 end
 
 group :test do
