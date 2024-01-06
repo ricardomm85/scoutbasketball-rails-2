@@ -71,6 +71,8 @@ group :development do
   gem 'schema_to_scaffold'
 
   gem 'bundler-audit'
+
+  gem 'brakeman'
 end
 
 group :test do
