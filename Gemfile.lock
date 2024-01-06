@@ -119,6 +119,8 @@ GEM
       rubocop
       smart_properties
     erubi (1.12.0)
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.1)
       activesupport (>= 5.0)
@@ -253,6 +255,8 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    schema_to_scaffold (0.8.2)
+      activesupport (~> 7)
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -317,12 +321,14 @@ DEPENDENCIES
   capybara
   debug
   erb_lint
+  faker
   hotwire-livereload (~> 1.2)
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)
   puma (~> 6)
   rails (~> 7.1.0)
+  schema_to_scaffold
   selenium-webdriver
   solargraph
   sprockets-rails

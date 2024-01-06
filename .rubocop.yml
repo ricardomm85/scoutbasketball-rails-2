@@ -4,3 +4,7 @@ Style/Documentation:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: single_quotes
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false

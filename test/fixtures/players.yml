@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  surname: MyString
+  height: 9.99
+  weight: 1
+  birthday: 1
+  birthmonth: 1
+  birthyear: 1
+  slug: MyString1
+  hs_year: 1
+  facebook: MyString1
+  instagram: MyString1
+  twitter: MyString1
+  hand: 1
+  positions_validated: 1
+  hs_position: 1
+
+two:
+  name: MyString
+  surname: MyString
+  height: 9.99
+  weight: 1
+  birthday: 1
+  birthmonth: 1
+  birthyear: 1
+  slug: MyString2
+  hs_year: 1
+  facebook: MyString2
+  instagram: MyString2
+  twitter: MyString2
+  hand: 1
+  positions_validated: 1
+  hs_position: 1

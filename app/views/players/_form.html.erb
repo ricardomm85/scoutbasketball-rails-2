@@ -1,0 +1,97 @@
+<%= form_with(model: player) do |form| %>
+  <% if player.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+        <% player.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :surname, style: "display: block" %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :height, style: "display: block" %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div>
+    <%= form.label :weight, style: "display: block" %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.number_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :birthmonth, style: "display: block" %>
+    <%= form.number_field :birthmonth %>
+  </div>
+
+  <div>
+    <%= form.label :birthyear, style: "display: block" %>
+    <%= form.number_field :birthyear %>
+  </div>
+
+  <div>
+    <%= form.label :slug, style: "display: block" %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div>
+    <%= form.label :hs_year, style: "display: block" %>
+    <%= form.number_field :hs_year %>
+  </div>
+
+  <div>
+    <%= form.label :recruiter_id, style: "display: block" %>
+    <%= form.text_field :recruiter_id %>
+  </div>
+
+  <div>
+    <%= form.label :facebook, style: "display: block" %>
+    <%= form.text_field :facebook %>
+  </div>
+
+  <div>
+    <%= form.label :instagram, style: "display: block" %>
+    <%= form.text_field :instagram %>
+  </div>
+
+  <div>
+    <%= form.label :twitter, style: "display: block" %>
+    <%= form.text_field :twitter %>
+  </div>
+
+  <div>
+    <%= form.label :hand, style: "display: block" %>
+    <%= form.number_field :hand %>
+  </div>
+
+  <div>
+    <%= form.label :positions_validated, style: "display: block" %>
+    <%= form.number_field :positions_validated %>
+  </div>
+
+  <div>
+    <%= form.label :hs_position, style: "display: block" %>
+    <%= form.number_field :hs_position %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
