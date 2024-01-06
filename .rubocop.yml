@@ -2,7 +2,9 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'vendor/**/*'
+    - 'config/environments/**/*'
     - db/schema.rb
+    - bin/bundle
 
 Style/Documentation:
   Enabled: false
