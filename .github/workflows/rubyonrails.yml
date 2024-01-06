@@ -15,33 +15,37 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:8.2
+        image: mysql:5.7
         ports:
-          - "3306:3306"
+          - 3307:3306
         env:
           MYSQL_DATABASE: rails_test
-          MYSQL_USER: rails
-          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_HOST: 127.0.0.1
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
     env:
       RAILS_ENV: test
-      DATABASE_URL: "mysql://rails:password@localhost:3306/rails_test"
+      DATABASE_URL: "mysql2://root:password@127.0.0.1:3307/rails_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      # Add or replace database setup steps here
       - name: Set up database schema
-        run: bin/rails db:schema:load
-      # Add or replace test runners here
+        run: rake db:test:prepare
       - name: Run tests
-        run: bin/rake
+        run: bin/rails test:all
 
   lint:
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: development
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -50,8 +54,8 @@ jobs:
         with:
           bundler-cache: true
       - name: Security audit dependencies
-        run: bundler-audit --update
+        run: bundle exec bundle-audit --update
       - name: Security audit application code
-        run: bin/brakeman -q -w2
+        run: bundle exec brakeman -q -w2
       - name: Lint Ruby files
-        run: bin/rubocop --parallel
+        run: bundle exec rubocop --parallel
