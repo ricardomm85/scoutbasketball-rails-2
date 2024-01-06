@@ -21,6 +21,11 @@ jobs:
         env:
           MYSQL_DATABASE: rails_test
           MYSQL_ROOT_PASSWORD: password
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
     env:
       RAILS_ENV: test
       DATABASE_URL: "mysql2://root:password@localhost:3306/rails_test"
@@ -31,7 +36,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      # Add or replace database setup steps here
+      - name: Verify MySQL connection from host
+        run: |
+          sudo apt-get install -y mysql-client libmysqlclient-dev
+          sudo /etc/init.d/mysql start
+          mysql -h 127.0.0.1 --port ${{ job.services.mysql.ports[3306] }} -u root -proot -e "CREATE DATABASE IF NOT EXISTS rails_test;"
       - name: Set up database schema
         run: bin/rails db:schema:load
       # Add or replace test runners here
