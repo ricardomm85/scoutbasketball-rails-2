@@ -21,6 +21,7 @@ jobs:
         env:
           MYSQL_DATABASE: rails_test
           MYSQL_ROOT_PASSWORD: password
+          MYSQL_HOST: 127.0.0.1
         options: >-
           --health-cmd="mysqladmin ping"
           --health-interval=10s
